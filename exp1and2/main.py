@@ -9,7 +9,7 @@ from cnsenti import Sentiment
 from cnsenti import Emotion
 
 
-# current access token: '2.00txhpkFtzki5Dc5beba9159W4c2EC'
+# current access token: ''
 def get_comment(give_access_token, give_id, give_since_id=None, give_max_id=None, give_count=None, give_page=None):
     url = 'https://api.weibo.com/2/comments/show.json'
 
@@ -236,14 +236,13 @@ def emotion_analysis(file_path, ):
 if __name__ == '__main__':
     # input page number needed
     page_require = 10  # change number here,max=10
-    # ID = [4633472788597144, 4633483147744345, 4633512084766773, 4633063948026847, 4633151232806099, 4634600838267631,
-    #       4633242843743063, 4634118304041238, 4634151565132865, 4634151267076871]
-    ID = [4499476460497308]
+    # ID = []
+    ID = []
 
     N = page_require + 1
     for id_num in ID:
         for pgnum in range(1, N):
-            a = get_comment(give_access_token='2.00txhpkFtzki5Dc5beba9159W4c2EC',
+            a = get_comment(give_access_token='',
                             give_id=id_num,
                             give_count=200,
                             give_page=pgnum
